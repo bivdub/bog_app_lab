@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BogAppLab</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+  <header>
+    <ul class="nav nav-pills">
+      <li role="presentation"><%= link_to "Home", root_path %></li>
+      <li role="presentation"><%= link_to "Creature List", creatures_path%></li>
+      <li role="presentation"><%= link_to "New Creature", new_creature_path%></li>
+    </ul>
+  </header>
+<%= yield %>
+
+</body>
+</html>

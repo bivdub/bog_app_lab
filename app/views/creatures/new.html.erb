@@ -1,0 +1,32 @@
+<div class="container text-center">
+  <div class="row">
+    <h1>Please to enter a new creature?</h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <%= simple_form_for :creature, url: creatures_path(@creature) do |f| %>
+        <% if @creature.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@creature.errors.count, "error") %> prohibited this article from being saved:
+            </h2>
+            <ul>
+              <% @creature.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <h3><%= f.input :name, label: 'Creature Name' %></h3>
+        <h3><%= f.input :desc, label: 'Creature Description' %></h3>
+        <h5><%= f.button :submit %></h5>
+
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <h3><%= link_to "back to list", creatures_path %></h3>
+  </div>
+</div>

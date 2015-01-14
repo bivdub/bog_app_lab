@@ -1,0 +1,22 @@
+<div class="col-xs-8 col-xs-offset-2">
+<%= simple_form_for :creature, url: creature_path(@creature), method: :patch do |f| %>
+
+  <% if @creature.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@creature.errors.count, "error") %> prohibited this article from being saved:
+    </h2>
+    <ul>
+      <% @creature.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h3><%= f.input :name, label: "creature name" %></h3>
+<h3><%= f.input :desc, label: "creature description" %></h3>
+<h5><%= f.button :submit %></h5>
+
+<% end %>
+</div>

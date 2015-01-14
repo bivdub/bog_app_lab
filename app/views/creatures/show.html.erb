@@ -1,0 +1,19 @@
+<div class="container text-center">
+
+<div class="row">
+  <h1><%= @creature.name %>'s Page!</h1>
+</div>
+<div class="row">
+  <h4>Description</h4>
+</div>
+<div class="row bordered">
+  <h5><%= @creature.desc %></h5>
+</div>
+<div class="row">
+<% @list.map do |photo| %>
+  <span> <%=link_to image_tag(FlickRaw.url_s(photo)), FlickRaw.url_b(photo), :target => :blank%></span>
+<% end %>
+</div>
+<div class="row">
+  <h3><%= link_to 'back to list', creatures_path %></h3>
+</div>
