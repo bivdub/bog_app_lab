@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
 
-      <%= simple_form_for :creature, url: creatures_path(@creature) do |f| %>
+      <%= simple_form_for @creature do |f| %>
         <% if @creature.errors.any? %>
           <div id="error_explanation">
             <h2>
@@ -21,6 +21,7 @@
 
         <h3><%= f.input :name, label: 'Creature Name' %></h3>
         <h3><%= f.input :desc, label: 'Creature Description' %></h3>
+        <h4><%= f.association :tags, as: :check_boxes, inline_label: 'yes' %></h4>
         <h5><%= f.button :submit %></h5>
 
       <% end %>

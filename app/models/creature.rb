@@ -4,4 +4,6 @@ class Creature < ActiveRecord::Base
 
   validates :desc, presence: true, length: { minimum: 10, maximum: 255}
 
+  has_and_belongs_to_many :tags
+
 end
